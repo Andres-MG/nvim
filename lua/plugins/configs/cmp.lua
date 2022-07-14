@@ -10,6 +10,7 @@ cmp.setup {
     sources = {
         { name = 'nvim_lua' },
         { name = 'nvim-lsp' },
+        { name = 'nvim-lsp-signature-help' },
         { name = 'buffer' },
         { name = 'path' },
         { name = 'cmdline' },
