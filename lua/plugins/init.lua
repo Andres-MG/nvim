@@ -4,6 +4,7 @@ require('packer').startup(function(use)
     -- Packer --
     use 'wbthomason/packer.nvim'
 
+    -- Theme --
     use {
         'rakr/vim-one',
         config = function()
@@ -14,7 +15,10 @@ require('packer').startup(function(use)
     -- Lsp --
     use {
         'neovim/nvim-lspconfig',
-        requires = 'williamboman/nvim-lsp-installer',
+        requires = {
+            'williamboman/nvim-lsp-installer',
+            { 'hrsh7th/cmp-nvim-lsp', opt = true },
+        },
         config = function()
             require('nvim-lsp-installer').setup {
                 automatic_installation = true,
@@ -134,6 +138,7 @@ require('packer').startup(function(use)
     -- Trailing spaces --
     use {
         'lewis6991/spaceless.nvim',
+        event = 'InsertEnter',
         config = function()
             require('spaceless').setup()
         end,

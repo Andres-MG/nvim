@@ -8,12 +8,16 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+local present_cmp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
+if present_cmp then
+    capabilities = cmp_lsp.update_capabilities(capabilities)
+end
 
 -- LSP servers --
 
 lspconfig.sumneko_lua.setup {
     on_attach = on_attach,
-    capabilites = capabilities,
+    capabilities = capabilities,
     settings = {
         Lua = {
             diagnostics = {
