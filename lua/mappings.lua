@@ -128,6 +128,7 @@ M.telescope = function(telescope)
     map('n', '<leader>fb', function() telescope.buffers() end)
     map('n', '<leader>fh', function() telescope.help_tags() end)
     map('n', '<leader>fs', function() telescope.treesitter() end)
+    map('n', '<leader>fk', function() telescope.keymaps() end)
     map('n', '<leader>dd', function() telescope.diagnostics() end)
 end
 
