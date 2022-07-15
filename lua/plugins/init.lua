@@ -191,6 +191,15 @@ require('packer').startup(function(use)
         end,
     }
 
+    -- Trouble --
+    use {
+        'folke/trouble.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require 'plugins.configs.trouble'
+        end,
+    }
+
     -- Github copilot --
     use 'github/copilot.vim'
 

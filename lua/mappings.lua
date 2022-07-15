@@ -158,4 +158,13 @@ M.toggleterm = function()
     map('n', '<leader>ht', function() htop:toggle() end)
 end
 
+M.trouble = function()
+    map('n', '<leader>xx', '<cmd> TroubleToggle <CR>')
+    map('n', '<leader>xw', '<cmd> TroubleToggle workspace_diagnostics <CR>')
+    map('n', '<leader>xd', '<cmd> TroubleToggle document_diagnostics <CR>')
+    map('n', '<leader>xq', '<cmd> TroubleToggle quickfix <CR>')
+    map('n', '<leader>xl', '<cmd> TroubleToggle loclist <CR>')
+    map('n', '<leader>xr', '<cmd> TroubleToggle lsp_references <CR>')
+end
+
 return M
