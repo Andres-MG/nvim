@@ -98,12 +98,8 @@ end
 M.lsp = function(bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     map('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    map('n', 'gd', vim.lsp.buf.definition, bufopts)
-    map('n', 'gr', vim.lsp.buf.references, bufopts)
     map('n', 'K', vim.lsp.buf.hover, bufopts)
-    map('n', 'gi', vim.lsp.buf.implementation, bufopts)
     map('n', 'gk', vim.lsp.buf.signature_help, bufopts)
-    map('n', 'gt', vim.lsp.buf.type_definition, bufopts)
     map('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     map('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
     map('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
@@ -115,6 +111,17 @@ M.lsp = function(bufnr)
     map('n', '[d', vim.diagnostic.goto_prev, bufopts)
     map('n', ']d', vim.diagnostic.goto_next, bufopts)
 
+    if package.loaded.trouble then
+        map('n', 'gd', '<cmd> TroubleToggle lsp_definitions <CR>')
+        map('n', 'gr', '<cmd> TroubleToggle lsp_references <CR>')
+        map('n', 'gi', '<cmd> TroubleToggle lsp_implementations <CR>')
+        map('n', 'gt', '<cmd> TroubleToggle lsp_type_definitions <CR>')
+    else
+        map('n', 'gd', vim.lsp.buf.definition, bufopts)
+        map('n', 'gr', vim.lsp.buf.references, bufopts)
+        map('n', 'gi', vim.lsp.buf.implementation, bufopts)
+        map('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+    end
 end
 
 M.nvim_tree = function()
@@ -166,7 +173,6 @@ M.trouble = function()
     map('n', '<leader>xd', '<cmd> TroubleToggle document_diagnostics <CR>')
     map('n', '<leader>xq', '<cmd> TroubleToggle quickfix <CR>')
     map('n', '<leader>xl', '<cmd> TroubleToggle loclist <CR>')
-    map('n', '<leader>xr', '<cmd> TroubleToggle lsp_references <CR>')
 end
 
 return M
