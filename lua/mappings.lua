@@ -130,6 +130,10 @@ M.telescope = function(telescope)
     map('n', '<leader>fs', function() telescope.treesitter() end)
     map('n', '<leader>fk', function() telescope.keymaps() end)
     map('n', '<leader>dd', function() telescope.diagnostics() end)
+    map('n', '<leader>gs', function() telescope.git_status() end)
+    map('n', '<leader>gc', function() telescope.git_commits() end)
+    map('n', '<leader>gb', function() telescope.git_branches() end)
+    map('n', '<leader>gS', function() telescope.git_stash() end)
 end
 
 M.toggleterm = function()
