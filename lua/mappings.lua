@@ -8,6 +8,8 @@ map('n', '<leader>x', function()
     vim.cmd('bd' .. bufnr)
 end)
 
+map('n', '<A-h>', '<cmd> nohlsearch <CR>')
+
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
