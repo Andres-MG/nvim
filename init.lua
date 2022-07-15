@@ -1,5 +1,6 @@
 local set = vim.opt
 local g = vim.g
+local autocmd = vim.api.nvim_create_autocmd
 
 -- General
 g.mapleader = ' '
@@ -32,6 +33,17 @@ set.listchars:append('tab:> ')
 -- Theme
 set.termguicolors = true
 set.background = 'dark'
+
+-- Autocmds
+autocmd(
+    { 'Filetype' },
+    {
+        pattern  = { 'gitcommit' },
+        callback = function()
+            set.colorcolumn = { '50', '80' }
+        end,
+    }
+)
 
 -- Packer && plugins
 local fn = vim.fn
