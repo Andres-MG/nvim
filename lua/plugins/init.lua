@@ -152,6 +152,22 @@ require('packer').startup(function(use)
         end,
     }
 
+    -- Cursorline --
+    use {
+        'yamatsum/nvim-cursorline',
+        config = function()
+            require 'plugins.configs.cursorline'
+        end,
+    }
+
+    -- Scrollbar --
+    use {
+        'petertriho/nvim-scrollbar',
+        config = function()
+            require('scrollbar').setup()
+        end,
+    }
+
     -- Julia --
     use 'JuliaEditorSupport/julia-vim'
 
