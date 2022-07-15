@@ -24,8 +24,8 @@ require('packer').startup(function(use)
         'neovim/nvim-lspconfig',
         requires = {
             'williamboman/nvim-lsp-installer',
-            { 'nvim-lua/lsp-status.nvim', opt = true },
-            { 'hrsh7th/cmp-nvim-lsp', opt = true },
+            'nvim-lua/lsp-status.nvim',
+            'hrsh7th/cmp-nvim-lsp',
         },
         config = function()
             require('nvim-lsp-installer').setup {
@@ -84,7 +84,7 @@ require('packer').startup(function(use)
 
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = 'kyazdani42/nvim-web-devicons',
         config = function()
             require 'plugins.configs.nvim_tree'
         end,
@@ -94,8 +94,8 @@ require('packer').startup(function(use)
     use {
         'nvim-lualine/lualine.nvim',
         requires = {
-            { 'kyazdani42/nvim-web-devicons', opt = true },
-            { 'nvim-lua/lsp-status.nvim', opt = true },
+            'kyazdani42/nvim-web-devicons',
+            'nvim-lua/lsp-status.nvim',
         },
         config = function()
             require 'plugins.configs.lualine'
