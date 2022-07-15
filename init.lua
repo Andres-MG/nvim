@@ -66,4 +66,5 @@ require('packer').init {
 }
 
 require 'plugins'
+require 'plugins.lsp'
 require 'mappings'

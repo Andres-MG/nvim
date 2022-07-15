@@ -30,9 +30,9 @@ local M = {}
 
 M.cmp = function(cmp)
     return {
-        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
-        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4)),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete()),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-n>'] = {
             c = function(fallback)
@@ -101,7 +101,7 @@ M.lsp = function(bufnr)
     map('n', 'K', vim.lsp.buf.hover, bufopts)
     map('n', 'gi', vim.lsp.buf.implementation, bufopts)
     map('n', 'gk', vim.lsp.buf.signature_help, bufopts)
-    map('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+    map('n', 'gt', vim.lsp.buf.type_definition, bufopts)
     map('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     map('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
     map('n', '<leader>f', vim.lsp.buf.formatting, bufopts)

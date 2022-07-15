@@ -12,29 +12,6 @@ require('packer').startup(function(use)
         end,
     }
 
-    -- Lsp --
-    use {
-        'nvim-lua/lsp-status.nvim',
-        config = function()
-            require 'plugins.configs.lsp_status'
-        end,
-    }
-
-    use {
-        'neovim/nvim-lspconfig',
-        requires = {
-            'williamboman/nvim-lsp-installer',
-            'nvim-lua/lsp-status.nvim',
-            'hrsh7th/cmp-nvim-lsp',
-        },
-        config = function()
-            require('nvim-lsp-installer').setup {
-                automatic_installation = true,
-            }
-            require 'plugins.configs.lspconfig'
-        end,
-    }
-
     -- Treesitter --
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -45,22 +22,6 @@ require('packer').startup(function(use)
                     enable = true,
                 },
             }
-        end,
-    }
-
-    -- Autocompletion --
-    use {
-        'hrsh7th/nvim-cmp',
-        requires = {
-            'hrsh7th/cmp-nvim-lua',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lsp-signature-help',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-cmdline',
-        },
-        config = function()
-            require 'plugins.configs.cmp'
         end,
     }
 
@@ -90,13 +51,39 @@ require('packer').startup(function(use)
         end,
     }
 
+    -- LSP
+    use {
+        'neovim/nvim-lspconfig',
+        'williamboman/nvim-lsp-installer',
+        -- Config goes after all the plugins are loaded
+    }
+
+    -- Autocompletion --
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-nvim-lsp',
+        },
+        config = function()
+            require 'plugins.configs.cmp'
+        end,
+    }
+
     -- Lualine --
     use {
+        'nvim-lua/lsp-status.nvim',
+        config = function()
+            require 'plugins.configs.lsp_status'
+        end,
+    }
+
+    use {
         'nvim-lualine/lualine.nvim',
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-            'nvim-lua/lsp-status.nvim',
-        },
+        requires = 'nvim-web-devicons',
+        after = 'lsp-status.nvim',
         config = function()
             require 'plugins.configs.lualine'
         end,
