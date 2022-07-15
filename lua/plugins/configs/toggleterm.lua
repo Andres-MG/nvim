@@ -13,6 +13,9 @@ toggleterm.setup {
     end,
     open_mapping = [[<C-\>]],
     direction = 'float',
+    float_opts = {
+        border = 'rounded',
+    },
 }
 
 require('mappings').toggleterm()
