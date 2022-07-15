@@ -4,7 +4,6 @@ if not present then
 end
 
 local present_lsp_status, lsp_status = pcall(require, 'lsp-status')
-print(present_lsp_status)
 
 local lsp
 if present_lsp_status then
