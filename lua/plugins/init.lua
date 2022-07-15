@@ -14,9 +14,17 @@ require('packer').startup(function(use)
 
     -- Lsp --
     use {
+        'nvim-lua/lsp-status.nvim',
+        config = function()
+            require 'plugins.configs.lsp_status'
+        end,
+    }
+
+    use {
         'neovim/nvim-lspconfig',
         requires = {
             'williamboman/nvim-lsp-installer',
+            { 'nvim-lua/lsp-status.nvim', opt = true },
             { 'hrsh7th/cmp-nvim-lsp', opt = true },
         },
         config = function()
@@ -76,7 +84,7 @@ require('packer').startup(function(use)
 
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
             require 'plugins.configs.nvim_tree'
         end,
@@ -85,7 +93,10 @@ require('packer').startup(function(use)
     -- Lualine --
     use {
         'nvim-lualine/lualine.nvim',
-        requires = 'kyazdani42/nvim-web-devicons',
+        requires = {
+            { 'kyazdani42/nvim-web-devicons', opt = true },
+            { 'nvim-lua/lsp-status.nvim', opt = true },
+        },
         config = function()
             require 'plugins.configs.lualine'
         end,
