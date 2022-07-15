@@ -66,6 +66,7 @@ require('packer').startup(function(use)
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
             'hrsh7th/cmp-nvim-lsp',
+            'onsails/lspkind.nvim',
         },
         config = function()
             require 'plugins.configs.cmp'
