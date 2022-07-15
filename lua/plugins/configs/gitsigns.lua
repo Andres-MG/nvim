@@ -7,7 +7,6 @@ gitsigns.setup {
     on_attach = function(bufnr)
         require('mappings').gitsigns(gitsigns, bufnr)
     end,
-    word_diff = true,
     current_line_blame = true,
     current_line_blame_opts = {
         delay = 250,

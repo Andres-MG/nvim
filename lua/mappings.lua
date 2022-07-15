@@ -74,8 +74,8 @@ M.gitsigns = function(gs, bufnr)
     local bufopts = { buffer = bufnr }
     map('n', '[c', gs.next_hunk, bufopts)
     map('n', ']c', gs.prev_hunk, bufopts)
-    map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>', bufopts)
-    map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>', bufopts)
+    map({'n', 'v'}, '<leader>hs', gs.stage_hunk, bufopts)
+    map({'n', 'v'}, '<leader>hr', gs.reset_hunk, bufopts)
     map('n', '<leader>hS', gs.stage_buffer, bufopts)
     map('n', '<leader>hu', gs.undo_stage_hunk, bufopts)
     map('n', '<leader>hR', gs.reset_buffer, bufopts)
@@ -85,6 +85,7 @@ M.gitsigns = function(gs, bufnr)
     map('n', '<leader>hd', gs.diffthis, bufopts)
     map('n', '<leader>hD', function() gs.diffthis('~') end, bufopts)
     map('n', '<leader>td', gs.toggle_deleted, bufopts)
+    map('n', '<leader>hl', gs.setloclist, bufopts)
 end
 
 M.hop = function()
