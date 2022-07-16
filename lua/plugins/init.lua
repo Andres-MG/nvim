@@ -6,9 +6,9 @@ require('packer').startup(function(use)
 
     -- Theme --
     use {
-        'rakr/vim-one',
+        'Th3Whit3Wolf/one-nvim',
         config = function()
-            vim.cmd('colorscheme one')
+            vim.cmd('colorscheme one-nvim')
         end,
     }
 

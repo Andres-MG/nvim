@@ -60,7 +60,7 @@ require('packer').init {
     compile_on_sync = true,
     display = {
         open_fn = function()
-            return require('packer.util').float({ border = 'single' })
+            return require('packer.util').float({ border = 'rounded' })
         end,
     },
 }
