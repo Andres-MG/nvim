@@ -21,12 +21,14 @@ map('i', '<C-k>', '<Up>')
 map('i', '<C-l>', '<Right>')
 
 map('n', '<leader>tt', function()
-    if vim.opt.background:get() == 'dark' then
+    if vim.o.background == 'dark' then
         vim.opt.background = 'light'
     else
         vim.opt.background = 'dark'
     end
 end)
+
+map('n', '<A-s>', function() vim.opt.spell = not vim.o.spell end)
 
 local M = {}
 

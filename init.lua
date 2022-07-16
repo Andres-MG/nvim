@@ -5,6 +5,10 @@ local autocmd = vim.api.nvim_create_autocmd
 -- General
 g.mapleader = ' '
 
+-- Search
+set.smartcase = true
+set.incsearch = true
+
 -- Indenting
 set.autoindent = true
 set.expandtab = true
@@ -29,10 +33,15 @@ set.colorcolumn = { '100', '120' }
 set.list = true
 set.listchars:append('trail:⋅')
 set.listchars:append('tab:> ')
+set.lazyredraw = true
+set.scrolloff = 4
 
 -- Theme
 set.termguicolors = true
 set.background = 'dark'
+
+-- Spellcheck
+set.spelllang = 'en'
 
 -- Autocmds
 autocmd(
@@ -54,6 +63,30 @@ autocmd(
         end,
     }
 )
+
+-- Disable builtin vim plugins
+local disabled_built_ins = {
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "2html_plugin",
+    "logipat",
+    "rrhelper",
+    "matchit",
+}
+for _, plugin in pairs(disabled_built_ins) do
+    g["loaded_" .. plugin] = 1
+end
 
 -- Packer && plugins
 local fn = vim.fn
