@@ -15,13 +15,10 @@ require('packer').startup(function(use)
     -- Treesitter --
     use {
         'nvim-treesitter/nvim-treesitter',
+        requires = 'p00f/nvim-ts-rainbow',
         run = ':TSUpdate',
         config = function()
-            require('nvim-treesitter.configs').setup {
-                highlight = {
-                    enable = true,
-                },
-            }
+            require 'plugins.configs.treesitter'
         end,
     }
 
