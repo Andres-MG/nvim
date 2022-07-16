@@ -38,9 +38,19 @@ set.background = 'dark'
 autocmd(
     { 'Filetype' },
     {
-        pattern  = { 'gitcommit' },
+        pattern  = 'gitcommit',
         callback = function()
             set.colorcolumn = { '50', '80' }
+        end,
+    }
+)
+
+autocmd(
+    { 'Filetype' },
+    {
+        pattern = 'julia',
+        callback = function()
+            set.colorcolumn = '92'
         end,
     }
 )
