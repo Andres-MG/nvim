@@ -2,7 +2,7 @@ local map = require('utils').map
 
 map('n', '<Tab>', '<cmd> bnext <CR>')
 map('n', '<S-Tab>', '<cmd> bprev <CR>')
-map('n', '<leader>x', function()
+map('n', 'bd', function()
     local bufnr = vim.api.nvim_get_current_buf()
     vim.cmd('bprev')
     vim.cmd('bd' .. bufnr)
@@ -99,6 +99,7 @@ end
 
 M.lsp = function(bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    map('n', 'gd', vim.lsp.buf.definition, bufopts)
     map('n', 'gD', vim.lsp.buf.declaration, bufopts)
     map('n', 'K', vim.lsp.buf.hover, bufopts)
     map('n', 'gk', vim.lsp.buf.signature_help, bufopts)
@@ -115,12 +116,12 @@ M.lsp = function(bufnr)
     map('n', ']d', vim.diagnostic.goto_next, bufopts)
 
     if package.loaded.trouble then
-        map('n', 'gd', '<cmd> TroubleToggle lsp_definitions <CR>')
+        -- map('n', 'gd', '<cmd> TroubleToggle lsp_definitions <CR>')
         map('n', 'gr', '<cmd> TroubleToggle lsp_references <CR>')
         map('n', 'gi', '<cmd> TroubleToggle lsp_implementations <CR>')
         map('n', 'gt', '<cmd> TroubleToggle lsp_type_definitions <CR>')
     else
-        map('n', 'gd', vim.lsp.buf.definition, bufopts)
+        -- map('n', 'gd', vim.lsp.buf.definition, bufopts)
         map('n', 'gr', vim.lsp.buf.references, bufopts)
         map('n', 'gi', vim.lsp.buf.implementation, bufopts)
         map('n', 'gt', vim.lsp.buf.type_definition, bufopts)
@@ -132,7 +133,7 @@ M.nvim_tree = function()
 end
 
 M.symbols_outline = function()
-    map('n', '<leader>o', '<cmd> SymbolsOutline <CR>')
+    map('n', '<C-s>', '<cmd> SymbolsOutline <CR>')
 end
 
 M.telescope = function(telescope)
