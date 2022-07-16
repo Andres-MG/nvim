@@ -9,6 +9,9 @@ local present_lsp_installer, lsp_installer = pcall(require, 'nvim-lsp-installer'
 if present_lsp_installer then
     lsp_installer.setup {
         automatic_installation = true,
+        ui = {
+            border = 'rounded',
+        },
     }
 end
 
@@ -66,16 +69,28 @@ lspconfig.fortls.setup {
     capabilities = capabilities,
 }
 
--- UI
+-- UI --
+
+-- Gutter LSP hings
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
     local hl = 'DiagnosticSign' .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Borders for all LSP floats
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
     opts = opts or {}
     opts.border = opts.border or 'rounded'
     return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
+-- Borders for LspInfo float
+local win = require 'lspconfig.ui.windows'
+local _default_opts = win.default_opts
+win.default_opts = function(options)
+    local opts = _default_opts(options)
+    opts.border = 'rounded'
+    return opts
 end
