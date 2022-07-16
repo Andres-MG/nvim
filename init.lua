@@ -1,6 +1,7 @@
 local set = vim.opt
 local g = vim.g
 local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
 
 -- General
 g.mapleader = ' '
@@ -44,9 +45,13 @@ set.background = 'dark'
 set.spelllang = 'en'
 
 -- Autocmds
+augroup('UserConfig', {
+    clear = true,
+})
 autocmd(
     { 'Filetype' },
     {
+        group = 'UserConfig',
         pattern  = 'gitcommit',
         callback = function()
             set.colorcolumn = { '50', '80' }
@@ -57,6 +62,7 @@ autocmd(
 autocmd(
     { 'Filetype' },
     {
+        group = 'UserConfig',
         pattern = 'julia',
         callback = function()
             set.colorcolumn = '92'
@@ -107,6 +113,15 @@ require('packer').init {
         end,
     },
 }
+
+autocmd(
+    { 'BufWritePost' },
+    {
+        group = 'UserConfig',
+        pattern = 'plugins.lua',
+        command = 'source <afile> | PackerCompile',
+    }
+)
 
 require 'plugins'
 require 'plugins.lsp'
