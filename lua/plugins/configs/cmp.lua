@@ -17,6 +17,7 @@ cmp.setup {
     sources = cmp.config.sources({
         { name = 'buffer' },
         { name = 'path' },
+    }, {
         { name = 'nvim_lsp' },
     }),
 }
@@ -28,11 +29,9 @@ if present_kind then
             format = lspkind.cmp_format({
                 mode = 'symbol_text',
                 menu = ({
-                    buffer = "[Buffer]",
-                    nvim_lsp = "[LSP]",
-                    luasnip = "[LuaSnip]",
-                    nvim_lua = "[Lua]",
-                    latex_symbols = "[Latex]",
+                    nvim_lsp = '[LSP]',
+                    buffer = '[Buffer]',
+                    path = '[Path]',
                 }),
             }),
         },
