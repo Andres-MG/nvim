@@ -72,7 +72,7 @@ require('packer').startup(function(use)
 
     -- Autopairs --
     use {
-	    'windwp/nvim-autopairs',
+        'windwp/nvim-autopairs',
         config = function()
             require("nvim-autopairs").setup {}
         end,
@@ -173,7 +173,12 @@ require('packer').startup(function(use)
     }
 
     -- Julia --
-    use 'JuliaEditorSupport/julia-vim'
+    use {
+        'JuliaEditorSupport/julia-vim',
+        event = 'InsertEnter',
+        -- lazy-loading for filetypes already in the plugin
+        -- https://github.com/JuliaEditorSupport/julia-vim/issues/35
+    }
 
     -- Gitsigns --
     use {
@@ -194,7 +199,10 @@ require('packer').startup(function(use)
     }
 
     -- Github copilot --
-    use 'github/copilot.vim'
+    use {
+        'github/copilot.vim',
+        event = 'InsertEnter',
+    }
 
     -- Toggleterm --
     use {
