@@ -71,6 +71,8 @@ require('packer').startup {
                 'hrsh7th/cmp-path',
                 'hrsh7th/cmp-cmdline',
                 'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-nvim-lsp-signature-help',
+                'kdheepak/cmp-latex-symbols',
                 'onsails/lspkind.nvim',
             },
             config = function()
@@ -222,7 +224,7 @@ require('packer').startup {
         }
 
         -- Sync after bootstrap
-        if packer_bootstrap then
+        if Packer_bootstrap then
             print 'Syncing packer ...'
             require('packer').sync()
         end
