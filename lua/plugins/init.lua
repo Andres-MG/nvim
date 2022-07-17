@@ -223,6 +223,13 @@ require('packer').startup {
             end,
         }
 
+        -- Which-key
+        use {
+            'folke/which-key.nvim',
+            config = function()
+                require 'plugins.configs.whichkey'
+          end,
+        }
         -- Sync after bootstrap
         if Packer_bootstrap then
             print 'Syncing packer ...'
