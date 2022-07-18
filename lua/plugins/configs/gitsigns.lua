@@ -4,10 +4,10 @@ if not present then
 end
 
 gitsigns.setup {
-    on_attach = function(bufnr)
-        require('mappings').gitsigns(gitsigns, bufnr)
+    on_attach = function()
+        require('mappings').gitsigns(gitsigns)
     end,
-    current_line_blame = true,
+    current_line_blame = false,
     current_line_blame_opts = {
         delay = 250,
     },
