@@ -41,6 +41,8 @@ set.scrolloff = 4
 set.termguicolors = true
 set.background = 'dark'
 
+set.guifont = { 'FiraCode NF', ':h10' }
+
 -- Spellcheck
 set.spelllang = 'en'
 

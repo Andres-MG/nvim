@@ -5,5 +5,5 @@ end
 
 lsp_status.config {
     diagnostics = false,
-    status_symbol = ' LSP'
+    status_symbol = '  LSP'
 }
