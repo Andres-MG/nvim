@@ -17,7 +17,6 @@ cmp.setup {
     sources = cmp.config.sources({
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'latex_symbols' },
     }, {
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
@@ -33,7 +32,6 @@ if present_kind then
                 menu = ({
                     buffer = '[Buffer]',
                     path = '[Path]',
-                    latex_symbols = '[LaTeX]',
                     nvim_lsp = '[LSP]',
                 }),
             }),
