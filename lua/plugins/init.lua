@@ -165,14 +165,6 @@ require('packer').startup {
             end,
         }
 
-        -- Cursorline --
-        use {
-            'yamatsum/nvim-cursorline',
-            config = function()
-                require 'plugins.configs.cursorline'
-            end,
-        }
-
         -- Scrollbar --
         use {
             'petertriho/nvim-scrollbar',
