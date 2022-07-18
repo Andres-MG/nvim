@@ -15,6 +15,11 @@ map('n', '<C-j>', '<C-w>j', { desc = '  Bottom window' })
 map('n', '<C-k>', '<C-w>k', { desc = '  Top window' })
 map('n', '<C-l>', '<C-w>l', { desc = '  Right window' })
 
+map('n', '<C-Up>', ':resize -2<CR>', { desc = '  Resize up' })
+map('n', '<C-Down>', ':resize +2<CR>', { desc = '  Resize down' })
+map('n', '<C-Left>', ':vertical resize -2<CR>', { desc = '  Resize left' })
+map('n', '<C-Right>', ':vertical resize +2<CR>', { desc = '  Resize right' })
+
 map('i', '<C-h>', '<Left>', { desc = '  Move cursor left' })
 map('i', '<C-j>', '<Down>', { desc = '  Move cursor down' })
 map('i', '<C-k>', '<Up>', { desc = '  Move cursor up' })
