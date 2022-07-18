@@ -5,4 +5,6 @@ end
 
 require('mappings').whichkey()
 
+vim.opt.timeoutlen = 500
+
 whichkey.setup()
