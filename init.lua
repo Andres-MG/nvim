@@ -51,7 +51,7 @@ augroup('UserConfig', {
 autocmd(
     { 'Filetype' },
     {
-        group    = 'UserConfig',
+        group = 'UserConfig',
         pattern  = 'gitcommit',
         callback = function()
             set.colorcolumn = { '50', '80' }
@@ -112,7 +112,7 @@ end
 autocmd(
     { 'BufWritePost' },
     {
-        group   = 'UserConfig',
+        group = 'UserConfig',
         pattern = 'plugins.lua',
         command = 'source <afile> | PackerCompile',
     }
