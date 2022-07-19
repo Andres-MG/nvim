@@ -33,7 +33,13 @@ map('n', '<leader>tt', function()
     end
 end, { desc = '  Toggle theme' })
 
-map('n', '<A-s>', function() vim.opt.spell = not vim.o.spell end, { desc = '  Toggle spell checks' })
+map('n', '<A-s>', function()
+    vim.opt.spell = not vim.o.spell
+end, { desc = '  Toggle spell checks' })
+
+map('n', '<A-r>', function()
+    vim.opt.relativenumber = not vim.o.relativenumber
+end, { desc = '  Toggle relative line numbers' })
 
 local M = {}
 
