@@ -166,6 +166,8 @@ M.toggleterm = function()
     map('n', '<leader>tv', '<cmd> ToggleTerm direction=horizontal <CR>', { desc = '  Vertical terminal' })
     map('n', '<leader>tf', '<cmd> ToggleTerm direction=float <CR>', { desc = '  Floating terminal' })
 
+    map('t', '<C-x>', '<C-\\><C-n>', { desc = '  Leave terminal mode' })
+
     map('n', '<leader>lg', '<cmd> TermExec cmd=lazygit <CR>', { desc = '  Lazygit' })
     map('n', '<leader>ht', '<cmd> TermExec cmd=htop <CR>', { desc = '  Htop'})
 end
