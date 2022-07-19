@@ -154,6 +154,8 @@ M.telescope = function(telescope)
 end
 
 M.toggleterm = function()
+    map('n', '<C-t>', '<cmd> exe v:count1 . "ToggleTerm" <CR>', { desc = '  Toggle terminal' })
+    map('t', '<C-t>', '<cmd> exe v:count1 . "ToggleTerm" <CR>', { desc = '  Toggle terminal' })
     map('n', '<leader>th', '<cmd> ToggleTerm size=80 direction=vertical <CR>', { desc = '  Horizontal terminal' })
     map('n', '<leader>tv', '<cmd> ToggleTerm direction=horizontal <CR>', { desc = '  Vertical terminal' })
     map('n', '<leader>tf', '<cmd> ToggleTerm direction=float <CR>', { desc = '  Floating terminal' })

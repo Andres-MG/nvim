@@ -11,7 +11,6 @@ toggleterm.setup {
             return vim.opt.columns:get() * 0.4
         end
     end,
-    open_mapping = [[<C-\>]],
     direction = 'float',
     float_opts = {
         border = 'rounded',
