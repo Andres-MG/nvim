@@ -23,7 +23,7 @@ end
 
 -- On_attach function
 local on_attach = function(client, bufnr)
-    require('mappings').lsp(bufnr)
+    require('mappings').lsp()
     if present_lsp_status then
         lsp_status.on_attach(client)
     end
@@ -65,6 +65,11 @@ lspconfig.julials.setup {
 }
 
 lspconfig.fortls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+lspconfig.pyright.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
