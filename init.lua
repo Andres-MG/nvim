@@ -36,6 +36,7 @@ set.listchars:append('trail:⋅')
 set.listchars:append('tab:> ')
 set.lazyredraw = true
 set.scrolloff = 4
+set.signcolumn = 'yes'
 
 -- Theme
 set.termguicolors = true
