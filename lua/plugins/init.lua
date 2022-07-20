@@ -203,6 +203,9 @@ require('packer').startup {
         use {
             'github/copilot.vim',
             event = 'InsertEnter',
+            config = function()
+                require 'plugins.configs.copilot'
+            end,
         }
 
         -- Toggleterm --

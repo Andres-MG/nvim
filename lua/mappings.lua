@@ -67,7 +67,6 @@ M.cmp = function(cmp)
                 end
             end,
         },
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -83,6 +82,10 @@ M.cmp = function(cmp)
             end
         end,
     }
+end
+
+M.copilot = function()
+    map('i', '<C-b>', 'copilot#Accept("<CR>")', { desc = '  Accept suggestion', expr = true })
 end
 
 M.gitsigns = function(gs)
