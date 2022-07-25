@@ -123,4 +123,5 @@ autocmd(
 
 require 'plugins'
 require 'plugins.lsp'
+require 'plugins.copilot'
 require 'mappings'
