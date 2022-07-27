@@ -171,8 +171,12 @@ M.toggleterm = function()
 
     map('t', '<C-x>', '<C-\\><C-n>', { desc = '  Leave terminal mode' })
 
-    map('n', '<leader>lg', '<cmd> TermExec cmd=lazygit <CR>', { desc = '  Lazygit' })
-    map('n', '<leader>ht', '<cmd> TermExec cmd=htop <CR>', { desc = '  Htop'})
+    local Terminal = require('toggleterm.terminal').Terminal
+    local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
+    local htop = Terminal:new({cmd = 'htop', hidden = true})
+
+    map('n', '<leader>lg', function() lazygit:toggle() end, { desc = '  Lazygit' })
+    map('n', '<leader>ht', function() htop:toggle() end, { desc = '  Htop'})
 end
 
 M.trouble = function()
