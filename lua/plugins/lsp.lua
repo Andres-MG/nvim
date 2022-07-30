@@ -59,6 +59,11 @@ lspconfig.sumneko_lua.setup {
     },
 }
 
+lspconfig.clangd.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
 lspconfig.julials.setup {
     on_attach = on_attach,
     capabilities = capabilities,
