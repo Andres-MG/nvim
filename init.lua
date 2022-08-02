@@ -42,7 +42,7 @@ set.signcolumn = 'yes'
 set.termguicolors = true
 set.background = 'dark'
 
-set.guifont = { 'FiraCode NF', ':h10' }
+set.guifont = { 'Iosevka', ':h10' }
 
 -- Spellcheck
 set.spelllang = 'en'
