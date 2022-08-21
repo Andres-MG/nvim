@@ -79,6 +79,25 @@ lspconfig.pyright.setup {
     capabilities = capabilities,
 }
 
+local present_rt, rt = pcall(require, 'rust-tools')
+if present_rt then
+    local rust_on_attach = function(client, bufnr)
+        require('mappings').rust(rt)
+        on_attach(client, bufnr)
+    end
+    rt.setup {
+        tools = {
+            hover_actions = {
+                auto_focus = true,
+            },
+        },
+        server = {
+            on_attach = rust_on_attach,
+            capabilities = capabilities,
+        },
+    }
+end
+
 -- UI --
 
 -- Gutter LSP hings

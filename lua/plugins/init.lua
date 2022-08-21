@@ -60,6 +60,7 @@ require('packer').startup {
         use {
             'neovim/nvim-lspconfig',
             'williamboman/nvim-lsp-installer',
+            'simrat39/rust-tools.nvim',
             -- Config goes after all the plugins are loaded
         }
 

@@ -144,6 +144,13 @@ M.nvim_tree = function()
     map('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', { desc = 'פּ  Toggle NvimTree' })
 end
 
+M.rust = function(rt)
+    map('n', '<leader>rs', function() rt.inlay_hints.set() end, { desc = '  Rust set hints' })
+    map('n', '<leader>ru', function() rt.inlay_hints.unset() end, { desc = '  Rust unset hints' })
+    map('n', '<leader>ra', function() rt.hover_actions.hover_actions() end, { desc = '  Rust hover actions' })
+    map('n', '<leader>rg', function() rt.code_action_group.code_action_group() end, { desc = '  Rust code action '})
+end
+
 M.symbols_outline = function()
     map('n', '<C-s>', '<cmd> SymbolsOutline <CR>', { desc = 'פּ  Toggle symbols outline' })
 end
