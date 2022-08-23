@@ -9,6 +9,6 @@ vim.g.copilot_filetypes = {
     ['c'] = true,
     ['c++'] = true,
 }
-vim.g.copilot_node_command = "/home/andres/Software/node-v12.17.0-linux-x64/bin/node"
+vim.g.copilot_node_command = "/home/andres/Software/node-v16.17.0-linux-x64/bin/node"
 
 require('mappings').copilot()

@@ -222,6 +222,7 @@ require('packer').startup {
                 require 'plugins.configs.whichkey'
           end,
         }
+
         -- Sync after bootstrap
         if Packer_bootstrap then
             print 'Syncing packer ...'
