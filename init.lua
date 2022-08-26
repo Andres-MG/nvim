@@ -7,6 +7,7 @@ local augroup = vim.api.nvim_create_augroup
 g.mapleader = ','
 
 -- Search
+set.ignorecase = true
 set.smartcase = true
 set.incsearch = true
 
