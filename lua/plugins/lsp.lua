@@ -5,14 +5,16 @@ if not present_lsp then
 end
 
 -- LSP installer setup
-local present_lsp_installer, lsp_installer = pcall(require, 'nvim-lsp-installer')
-if present_lsp_installer then
-    lsp_installer.setup {
+local present_mason, mason = pcall(require, 'mason')
+local present_mason_lspconfig, mason_lspconfig = pcall(require, 'mason-lspconfig')
+if present_mason and present_mason_lspconfig then
+    mason.setup {
         automatic_installation = true,
         ui = {
             border = 'rounded',
         },
     }
+    mason_lspconfig.setup()
 end
 
 -- LSP status init

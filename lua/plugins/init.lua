@@ -58,8 +58,9 @@ require('packer').startup {
 
         -- LSP
         use {
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
             'neovim/nvim-lspconfig',
-            'williamboman/nvim-lsp-installer',
             'simrat39/rust-tools.nvim',
             -- Config goes after all the plugins are loaded
         }
