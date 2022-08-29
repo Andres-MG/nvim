@@ -178,7 +178,6 @@ require('packer').startup {
         -- Julia --
         use {
             'JuliaEditorSupport/julia-vim',
-            event = 'InsertEnter',
             -- lazy-loading for filetypes already in the plugin
             -- https://github.com/JuliaEditorSupport/julia-vim/issues/35
         }
