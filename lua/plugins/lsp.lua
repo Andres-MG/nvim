@@ -118,10 +118,6 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- Borders for LspInfo float
-local win = require 'lspconfig.ui.windows'
-local _default_opts = win.default_opts
-win.default_opts = function(options)
-    local opts = _default_opts(options)
-    opts.border = 'rounded'
-    return opts
-end
+local win = require('lspconfig.ui.windows')
+win.default_options.border = 'rounded'
+
