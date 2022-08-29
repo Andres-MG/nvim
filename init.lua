@@ -4,7 +4,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 -- General
-g.mapleader = ','
+g.mapleader = ' '
 
 -- Search
 set.ignorecase = true
