@@ -2,7 +2,7 @@ local map = require('utils').map
 
 map('n', '<Tab>', '<cmd> bnext <CR>', { desc = '  Next buffer' })
 map('n', '<S-Tab>', '<cmd> bprev <CR>', { desc = '  Prev buffer' })
-map('n', 'bd', function()
+map('n', 'ds', function()
     local bufnr = vim.api.nvim_get_current_buf()
     vim.cmd('bprev')
     vim.cmd('bd' .. bufnr)
