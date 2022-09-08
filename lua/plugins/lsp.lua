@@ -24,7 +24,7 @@ if present_lsp_status then
 end
 
 -- On_attach function
-local on_attach = function(client, bufnr)
+local on_attach = function(client, _)
     require('mappings').lsp()
     if present_lsp_status then
         lsp_status.on_attach(client)
