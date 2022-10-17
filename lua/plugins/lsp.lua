@@ -38,7 +38,7 @@ if present_lsp_status then
 end
 local present_cmp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
 if present_cmp then
-    capabilities = cmp_lsp.update_capabilities(capabilities)
+    capabilities = cmp_lsp.default_capabilities(capabilities)
 end
 
 -- LSP servers --
