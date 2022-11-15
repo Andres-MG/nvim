@@ -89,8 +89,8 @@ M.copilot = function()
 end
 
 M.gitsigns = function(gs)
-    map('n', '[c', gs.next_hunk, { desc = '  Go to next hunk' })
-    map('n', ']c', gs.prev_hunk, { desc = '  Go to prev hunk' })
+    map('n', '[c', gs.prev_hunk, { desc = '  Go to prev hunk' })
+    map('n', ']c', gs.next_hunk, { desc = '  Go to next hunk' })
     map({'n', 'v'}, '<leader>hs', gs.stage_hunk, { desc = '  Stage hunk' })
     map({'n', 'v'}, '<leader>hr', gs.reset_hunk, { desc = '  Reset hunk' })
     map('n', '<leader>hS', gs.stage_buffer, { desc = '  Stage buffer' })
