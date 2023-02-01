@@ -56,7 +56,7 @@ autocmd(
     { 'Filetype' },
     {
         group = 'UserConfig',
-        pattern  = 'gitcommit',
+        pattern = 'gitcommit',
         callback = function()
             set.colorcolumn = { '50', '80' }
         end,

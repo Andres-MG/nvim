@@ -51,7 +51,7 @@ M.cmp = function(cmp)
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-n>'] = {
             c = function(fallback)
-               if cmp.visible() then
+                if cmp.visible() then
                     cmp.select_next_item()
                 else
                     fallback()
@@ -91,13 +91,13 @@ end
 M.gitsigns = function(gs)
     map('n', '[c', gs.prev_hunk, { desc = '  Go to prev hunk' })
     map('n', ']c', gs.next_hunk, { desc = '  Go to next hunk' })
-    map({'n', 'v'}, '<leader>hs', gs.stage_hunk, { desc = '  Stage hunk' })
-    map({'n', 'v'}, '<leader>hr', gs.reset_hunk, { desc = '  Reset hunk' })
+    map({ 'n', 'v' }, '<leader>hs', gs.stage_hunk, { desc = '  Stage hunk' })
+    map({ 'n', 'v' }, '<leader>hr', gs.reset_hunk, { desc = '  Reset hunk' })
     map('n', '<leader>hS', gs.stage_buffer, { desc = '  Stage buffer' })
     map('n', '<leader>hu', gs.undo_stage_hunk, { desc = '  Undo stage hunk' })
     map('n', '<leader>hR', gs.reset_buffer, { desc = '  Reset buffer' })
     map('n', '<leader>hp', gs.preview_hunk, { desc = '  Preview hunk' })
-    map('n', '<leader>hb', function() gs.blame_line{full=true} end, { desc = '  Blame line' })
+    map('n', '<leader>hb', function() gs.blame_line { full = true } end, { desc = '  Blame line' })
     map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = '  Toggle line blame' })
     map('n', '<leader>hd', gs.diffthis, { desc = '  Diff this' })
     map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = '  Diff this (~)' })
@@ -117,13 +117,14 @@ M.lsp = function()
     map('n', 'gk', vim.lsp.buf.signature_help, { desc = '  LSP signature help' })
     map('n', '<leader>rn', vim.lsp.buf.rename, { desc = '  LSP rename' })
     map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '  LSP code actions' })
-    map('n', '<leader>f', vim.lsp.buf.formatting, { desc = '  LSP format' })
+    map('n', '<A-f>', function() vim.lsp.buf.format { async = true } end, { desc = '  LSP format' })
     map('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = '  LSP add workspace' })
     map('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = '  LSP remove workspace' })
     map('n', '<leader>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, { desc = '  LSP list workspaces' })
-    map('n', '<leader>d', function() vim.diagnostic.open_float({focus = false}) end, { desc = '  LSP open diagnostic' })
+    map('n', '<leader>d', function() vim.diagnostic.open_float({ focus = false }) end,
+        { desc = '  LSP open diagnostic' })
     map('n', '[d', vim.diagnostic.goto_prev, { desc = '  LSP go to next' })
     map('n', ']d', vim.diagnostic.goto_next, { desc = '  LSP go to prev' })
 
@@ -148,7 +149,7 @@ M.rust = function(rt)
     map('n', '<leader>rs', function() rt.inlay_hints.set() end, { desc = '  Rust set hints' })
     map('n', '<leader>ru', function() rt.inlay_hints.unset() end, { desc = '  Rust unset hints' })
     map('n', '<leader>ra', function() rt.hover_actions.hover_actions() end, { desc = '  Rust hover actions' })
-    map('n', '<leader>rg', function() rt.code_action_group.code_action_group() end, { desc = '  Rust code action '})
+    map('n', '<leader>rg', function() rt.code_action_group.code_action_group() end, { desc = '  Rust code action' })
 end
 
 M.symbols_outline = function()
@@ -180,14 +181,14 @@ M.toggleterm = function()
 
     local Terminal = require('toggleterm.terminal').Terminal
     local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
-    local htop = Terminal:new({cmd = 'htop', hidden = true})
+    local htop = Terminal:new({ cmd = 'htop', hidden = true })
 
     map('n', '<leader>lg', function() lazygit:toggle() end, { desc = '  Lazygit' })
-    map('n', '<leader>ht', function() htop:toggle() end, { desc = '  Htop'})
+    map('n', '<leader>ht', function() htop:toggle() end, { desc = '  Htop' })
 end
 
 M.trouble = function()
-    map('n', '<leader>xx', '<cmd> TroubleToggle <CR>', { desc = 'ﱔ  Open Trouble'})
+    map('n', '<leader>xx', '<cmd> TroubleToggle <CR>', { desc = 'ﱔ  Open Trouble' })
     map('n', '<leader>xw', '<cmd> TroubleToggle workspace_diagnostics <CR>', { desc = 'ﱔ  Show workspace diagnostics' })
     map('n', '<leader>xd', '<cmd> TroubleToggle document_diagnostics <CR>', { desc = 'ﱔ  Show document diagnostics' })
     map('n', '<leader>xq', '<cmd> TroubleToggle quickfix <CR>', { desc = 'ﱔ  Show quickfix' })
