@@ -14,9 +14,16 @@ require('packer').startup {
 
         -- Theme --
         use {
-            'Th3Whit3Wolf/one-nvim',
+            'catppuccin/nvim',
             config = function()
-                vim.cmd('colorscheme one-nvim')
+                require('catppuccin').setup {
+                    flavour = 'frappe',
+                    background = {
+                        light = 'latte',
+                        dark = 'frappe',
+                    },
+                }
+                vim.cmd.colorscheme 'catppuccin-frappe'
             end,
         }
 
@@ -220,7 +227,7 @@ require('packer').startup {
             'folke/which-key.nvim',
             config = function()
                 require 'plugins.configs.whichkey'
-          end,
+            end,
         }
 
         -- Sync after bootstrap
