@@ -27,6 +27,14 @@ require('packer').startup {
             end,
         }
 
+        -- Mini --
+        use {
+            'echasnovski/mini.nvim',
+            config = function()
+                require 'plugins.configs.mini'
+            end,
+        }
+
         -- Treesitter --
         use {
             'nvim-treesitter/nvim-treesitter',
@@ -88,14 +96,6 @@ require('packer').startup {
             end,
         }
 
-        -- Autopairs --
-        use {
-            'windwp/nvim-autopairs',
-            config = function()
-                require("nvim-autopairs").setup {}
-            end,
-        }
-
         -- Lualine --
         use {
             'nvim-lua/lsp-status.nvim',
@@ -110,25 +110,6 @@ require('packer').startup {
             after = 'lsp-status.nvim',
             config = function()
                 require 'plugins.configs.lualine'
-            end,
-        }
-
-        -- Bufferline --
-        use {
-            'akinsho/bufferline.nvim',
-            requires = 'kyazdani42/nvim-web-devicons',
-            tag = 'v2.*',
-            config = function()
-                require 'plugins.configs.bufferline'
-            end
-        }
-
-        -- Comments --
-        use {
-            'numToStr/Comment.nvim',
-            keys = { 'gc', 'gb' },
-            config = function()
-                require('Comment').setup()
             end,
         }
 
@@ -154,23 +135,6 @@ require('packer').startup {
             branch = 'v2',
             config = function()
                 require 'plugins.configs.hop'
-            end,
-        }
-
-        -- Trailing spaces --
-        use {
-            'lewis6991/spaceless.nvim',
-            event = 'InsertEnter',
-            config = function()
-                require('spaceless').setup()
-            end,
-        }
-
-        -- Indenting lines --
-        use {
-            'lukas-reineke/indent-blankline.nvim',
-            config = function()
-                require('indent_blankline').setup()
             end,
         }
 

@@ -62,7 +62,6 @@ autocmd(
         end,
     }
 )
-
 autocmd(
     { 'Filetype' },
     {

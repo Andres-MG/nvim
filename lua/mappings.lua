@@ -8,7 +8,7 @@ map('n', 'ds', function()
     vim.cmd('bd' .. bufnr)
 end, { desc = '  Close buffer' })
 
-map('n', '<A-h>', '<cmd> nohlsearch <CR>', { desc = '  No highlight search' })
+map('n', '<C-;>', '<cmd> nohlsearch <CR>', { desc = '  No highlight search' })
 
 map('n', '<C-h>', '<C-w>h', { desc = '  Left window' })
 map('n', '<C-j>', '<C-w>j', { desc = '  Bottom window' })
