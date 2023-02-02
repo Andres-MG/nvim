@@ -21,7 +21,7 @@ if present_lsp_status then
             local msg = lsp_status.status()
             local minbufs = 0
             if copilot then
-                msg = msg .. ' '
+                msg = msg .. '🛸 '
                 minbufs = 1
             end
             if #vim.lsp.buf_get_clients(0) > minbufs then
