@@ -39,12 +39,6 @@ if psurround then
     surround.setup {}
 end
 
--- Mini.tabline --
-local ptabline, tabline = pcall(require, 'mini.tabline')
-if ptabline then
-    tabline.setup {}
-end
-
 -- Mini.trailspace --
 local ptrailspace, trailspace = pcall(require, 'mini.trailspace')
 if ptrailspace then

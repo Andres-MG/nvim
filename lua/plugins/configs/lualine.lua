@@ -62,4 +62,8 @@ lualine.setup {
     sections = {
         lualine_x = {'encoding', 'fileformat', 'filetype', lsp},
     },
+    tabline = {
+        lualine_a = {'buffers'},
+        lualine_z = {'tabs'},
+    }
 }
