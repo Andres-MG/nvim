@@ -58,6 +58,7 @@ lualine.setup {
     extensions = {
         'nvim-tree',
         'symbols-outline',
+        'toggleterm',
     },
     sections = {
         lualine_x = {'encoding', 'fileformat', 'filetype', lsp},
