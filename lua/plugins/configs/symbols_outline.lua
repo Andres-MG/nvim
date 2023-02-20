@@ -7,4 +7,5 @@ require('mappings').symbols_outline()
 symbols.setup {
     relative_width = true,
     width = 20,
+    autofold_depth = 0,
 }
