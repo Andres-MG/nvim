@@ -129,7 +129,7 @@ M.lsp = function()
     map('n', ']d', vim.diagnostic.goto_next, { desc = '  LSP go to prev' })
 
     if package.loaded.trouble then
-        map('n', 'gd', '<cmd> TroubleToggle lsp_definitions <CR>')
+        map('n', 'gd', '<cmd> TroubleToggle lsp_definitions <CR>', { desc = '  LSP definitions' })
         map('n', 'gr', '<cmd> TroubleToggle lsp_references <CR>', { desc = '  LSP references' })
         map('n', 'gi', '<cmd> TroubleToggle lsp_implementations <CR>', { desc = '  LSP implementations' })
         map('n', 'gt', '<cmd> TroubleToggle lsp_type_definitions <CR>', { desc = '  LSP type definitions' })
